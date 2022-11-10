@@ -1,5 +1,12 @@
 {{>layouts/header}}
-<div>
-    이 페이지는 edit 입니다.
-</div>
+{{#article}}
+    <form action="/articles/{{id}}/update" method="post">
+        <input type="hidden" name="id" value="{{id}}">
+        <input type="text" name="title" value="{{title}}">
+        <textarea rows="3" name="content" value="{{content}}"></textarea>
+        <input type="submit">
+    </form>
+    <a href="/articles/{{id}}">1개 조회 페이지</a>
+    <a href="/articles">게시글 목록</a>
+{{/article}}
 {{>layouts/footer}}

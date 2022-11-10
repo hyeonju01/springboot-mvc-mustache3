@@ -1,5 +1,15 @@
 {{>layouts/header}}
-<div>
-    이 페이지는 show 입니다.
-</div>
+{{#article}}
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{title}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted"> {{id}} </h6>
+            <p class="card-text">{{content}}</p>
+            <a href="/articles/new">새 글 쓰기</a>
+            <a href="/articles">게시글 목록</a>
+        </div>
+    </div>
+    <a href="/articles/{{id}}/edit" class="btn btn-primary">Edit</a>
+    <a href="/articles/{{id}}/delete" class="btn btn-danger">Delete</a>
+{{/article}}
 {{>layouts/footer}}
